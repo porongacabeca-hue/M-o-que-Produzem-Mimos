@@ -1,0 +1,36 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profile",
+      "description": "Customer profiles registered by WhatsApp phone number",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "cityState": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "phone"]
+    },
+    "orders": {
+      "title": "Customer Orders",
+      "description": "Mimos orders with Mercado Livre style timeline tracking and final product photos gallery",
+      "type": "object",
+      "properties": {
+        "orderNumber": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "customerName": { "type": "string" },
+        "eventDate": { "type": "string" },
+        "cityState": { "type": "string" },
+        "generalNotes": { "type": "string" },
+        "status": { "type": "string", "enum": ["solicitado", "em_producao", "pronto", "entregue", "cancelado"] },
+        "items": { "type": "array" },
+        "finalPhotos": { "type": "array" },
+        "statusHistory": { "type": "array" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["customerPhone", "customerName", "status", "items"]
+    }
+  }
+}
